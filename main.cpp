@@ -27,6 +27,7 @@ int main()
 	c4=c1;
 	
 	c4.afficher();
+	c3.afficher();
 	
 	
 	
