@@ -14,17 +14,18 @@ complexe::complexe(const complexe& c)
 	this->img=c.img;	
 }
 
-void complexe::afficher()
+void complexe::afficher() const
 {
 	cout<<endl<<rel<<" +i"<<img;
 }
 
-float complexe::module()
+float complexe::module() const
 {
 	return (float)sqrt(pow(rel,2)+pow(img,2));
 }
 
-void complexe::comparerrel(const complexe& c2)
+
+void complexe::comparerrel(const complexe& c2) const
 {
 	if(this->rel<c2.rel)
 	{
@@ -34,4 +35,67 @@ void complexe::comparerrel(const complexe& c2)
 	cout<<"0";
 	}
 }
+
+complexe complexe::operator+(const complexe &z ) 
+{
+	this->rel+=z.rel;
+	this->img+=z.img;
+	
+	return *this;	
+}
+
+complexe& complexe::operator=( complexe &z ) 
+{
+	this->rel=z.rel;
+	this->img=z.img;
+	
+	return *this;
+	
+}
+
+
+
+
+
+ostream& operator<<(ostream& o ,const complexe& c)
+{
+	o<<c.rel<<" +i"<<c.img<<endl;
+	return o;
+}
+
+
+istream& operator>>(istream& i ,complexe& c)
+{
+	cout<<"donner un rel: ";
+	cin>>c.rel;
+	cout<<"donner un img: ";
+	cin>>c.img;	
+	return i;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

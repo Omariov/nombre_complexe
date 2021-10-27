@@ -11,9 +11,14 @@ class complexe
 
 	complexe(int x,int y);
 	complexe(const complexe& c);
-	void afficher();
-	float module();
-	void comparerrel(const complexe& c2);
+	void afficher() const;
+	float module() const;
+	void comparerrel(const complexe& c2) const;
+	
+	friend ostream& operator<<(ostream& ,const complexe&);
+	friend istream& operator>>(istream& ,complexe&);
+	complexe operator+(const complexe &z); 
+	complexe& operator=(complexe &z );
 	
 	
 };
